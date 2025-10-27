@@ -1,0 +1,27 @@
+# infrastructure/conf/base.yml
+
+# ChromaDB
+chromadb:
+  host: "eegi-chroma"
+  port: 8000
+  collections:
+    signal: "signal_segments"
+    document: "document_chunks"
+    transcript: "transcript_chunks"
+  container_endpoint: "http://eegi-chroma:8000"
+
+# MinIO
+s3:
+  container_endpoint: "http://minio:9000"
+  local_endpoint: "http://localhost:9000"
+  bucket_name: "eeg-raw-data"
+
+# Logging
+logging:
+  level: "INFO"
+  format: "%(asctime)s - %(name)s - %(levelname)s - %(message)s"
+  datefmt: "%Y-%m-%d %H:%M:%S"
+
+# Kaggle
+kaggle:
+  competition_name: "hms-harmful-brain-activity-classification"

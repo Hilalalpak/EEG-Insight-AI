@@ -1,0 +1,9 @@
+# infrastructure/conf/pipeline/data_sources.yml
+data_sources:
+  youtube_videos:
+    - "https://www.youtube.com/watch?v=S9NLrhj0x-M"
+    - "https://www.youtube.com/watch?v=4D9R2WIKr-A"
+    - "https://www.youtube.com/watch?v=-R5yUX7p_j4"
+    - "https://www.youtube.com/watch?v=OknS2ObD9-g"
+    - "https://www.youtube.com/watch?v=2c7ABQRkn3s"
+  acns_document: "ACNSStandardizedCriticalCareEEGTerminology_rev2021.pdf"

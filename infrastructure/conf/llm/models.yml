@@ -1,0 +1,7 @@
+# infrastructure/conf/llm/models.yml
+
+# Embedding models
+models:
+  embedding: "cambridgeltl/SapBERT-from-PubMedBERT-fulltext"
+  # Reranker Models
+  reranker: "BAAI/bge-reranker-base"

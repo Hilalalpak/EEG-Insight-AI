@@ -1,0 +1,52 @@
+# 1. SENSITIVE DATA AND ENVIRONMENT SECRETS
+.env
+.env.*
+.secrets
+*.key
+*.pem
+
+
+# 2. PYTHON VIRTUAL ENVIRONMENTS AND BUILD ARTIFACTS
+# Virtual Environments (Venvs)
+venv/
+env/
+.venv/
+
+# Python Build Output
+__pycache__/
+*.pyc
+*.pyd
+*.so
+
+# Packaging, Distribution, and Test Caches
+dist/
+build/
+*.whl
+*.tar.gz
+*.egg-info/
+.pytest_cache/
+htmlcov/
+.cache/
+
+
+# 3. IDE (PYCHARM) AND OS (MACOS) FILES
+# PyCharm Configuration
+.idea/
+
+# macOS Metadata
+.DS_Store
+*.swp # Editor swap files (Vim/Nano backups)
+
+
+# 4. RAG DATA PIPELINE OUTPUTS
+# A. Vector Database (ChromaDB) Persistence
+.chroma/
+chroma_data/
+
+# B. MinIO Data Pipeline Temp Directories
+temp_kaggle_data/
+
+# C. Downloaded Data (Kaggle)
+data/**/*.parquet
+data/**/*.zip
+self/data/ # Temporary or auxiliary data folders

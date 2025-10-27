@@ -1,0 +1,15 @@
+# EEG Signal Processing
+signal:
+  sampling_rate: 200
+  freq_range: [0.5, 40]
+  notch_freq: 60
+
+# Text Chunking Parameters
+chunking:
+  document:
+    chunk_size: 1200
+    chunk_overlap: 300
+    small_section_threshold: 2000
+  transcript:
+    chunk_size: 1500
+    chunk_overlap: 300

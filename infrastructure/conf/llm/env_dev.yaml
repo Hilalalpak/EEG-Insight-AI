@@ -1,0 +1,11 @@
+# Ollama LLM Configuration
+ollama:
+  endpoint: "http://eegi-ollama:11434"
+  model: "gemma:2b"
+  options:
+    temperature: 0.2
+    top_p: 0.9
+    top_k: 40
+    num_predict: 300 # max tokens
+    num_ctx: 2048
+    num_thread: 4

@@ -1,0 +1,9 @@
+# infrastructure/conf/rag_strategy.yaml
+
+# RAG Search Parameters
+rag:
+  n_search: 15
+  n_final_signal: 5
+  n_final_document: 2
+  n_final_transcript: 2
+  rrf_k: 60    # RRF fusion constant

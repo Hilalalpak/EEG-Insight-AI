@@ -1,0 +1,140 @@
+version: '3.8'
+
+networks:
+  eegi-net:
+    driver: bridge
+
+volumes:
+  eegi-ollama-data:
+    driver: local
+  eegi-minio-data:
+    driver: local
+  eegi-chroma-data:
+    driver: local
+  eegi-model-cache:
+    driver: local
+
+services:
+
+# CORE INFRASTRUCTURE
+  chromadb:
+    image: chromadb/chroma
+    container_name: eegi-chroma
+    networks:
+      - eegi-net
+    volumes:
+      - eegi-chroma-data:/data
+    ports:
+      - "8000:8000"
+    restart: unless-stopped
+
+  minio:
+    image: minio/minio:RELEASE.2024-09-09T16-59-28Z
+    container_name: eegi-minio
+    networks:
+      - eegi-net
+    volumes:
+      - eegi-minio-data:/data
+    ports:
+      - "9002:9000"
+      - "9001:9001"
+    env_file:
+      - .env
+    environment:
+      - MINIO_ROOT_USER=${S3_ACCESS_KEY_ID}
+      - MINIO_ROOT_PASSWORD=${S3_SECRET_ACCESS_KEY}
+    command: server /data --console-address ":9001"
+    restart: unless-stopped
+
+# AI MODELS
+  ollama:
+    image: ollama/ollama
+    container_name: eegi-ollama
+    networks:
+      - eegi-net
+    volumes:
+      - eegi-ollama-data:/root/.ollama
+    ports:
+      - "11434:11434"
+    restart: unless-stopped
+
+# MAIN APPLICATIONS
+  api:
+    build:
+      context: .
+      dockerfile: infrastructure/docker/dockerfiles/api/Dockerfile
+    container_name: eegi-api
+    networks:
+      - eegi-net
+    ports:
+      - "8001:8001"
+    volumes:
+      - eegi-model-cache:/root/.cache/huggingface
+    depends_on:
+      - ollama
+      - chromadb
+    restart: unless-stopped
+
+  ui:
+    build:
+      context: .
+      dockerfile: infrastructure/docker/dockerfiles/ui/Dockerfile
+    container_name: eegi-ui
+    networks:
+      - eegi-net
+    ports:
+      - "8501:8501"
+    depends_on:
+      - api
+    restart: unless-stopped
+
+# DATA PROCESSING
+  ingest-signal:
+    build:
+      context: .
+      dockerfile: infrastructure/docker/dockerfiles/ingest-signal/Dockerfile
+    container_name: eegi-ingest-signal
+    networks:
+      - eegi-net
+    volumes:
+      - eegi-model-cache:/root/.cache/huggingface
+    env_file:
+      - .env
+    depends_on:
+      - minio
+      - chromadb
+    restart: 'no'
+
+
+  ingest-transcript:
+    build:
+      context: .
+      dockerfile: infrastructure/docker/dockerfiles/ingest-transcript/Dockerfile
+    container_name: eegi-ingest-transcript
+    networks:
+     - eegi-net
+    volumes:
+      - eegi-model-cache:/root/.cache/huggingface
+    env_file:
+      - .env
+    depends_on:
+      chromadb:
+        condition: service_started
+    restart: 'no'
+
+  ingest-document:
+    build:
+      context: .
+      dockerfile: infrastructure/docker/dockerfiles/ingest-document/Dockerfile
+    container_name: eegi-ingest-document
+    networks:
+     - eegi-net
+    volumes:
+      - eegi-model-cache:/root/.cache/huggingface
+      - ./data/documents:/app/data/documents
+    env_file:
+      - .env
+    depends_on:
+      - chromadb
+    restart: 'no'
+

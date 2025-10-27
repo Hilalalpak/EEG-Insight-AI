@@ -1,0 +1,16 @@
+#ingest-signal
+numpy==1.26.4
+pandas==2.2.2
+scipy==1.16.2
+boto3==1.40.51
+pyarrow==21.0.0
+
+sentence-transformers==5.1.1
+torch==2.2.2
+scikit-learn==1.7.2
+chromadb==1.2.0
+
+typer
+pyyaml==6.0.1
+pydantic==2.12.2
+python-dotenv==1.1.1
