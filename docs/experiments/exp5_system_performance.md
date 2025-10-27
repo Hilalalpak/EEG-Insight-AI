@@ -1,12 +1,8 @@
----
-
 # **EEG RAG System – Iterative Test Analysis**
 
 **Project:** Clinical EEG Retrieval-Augmented Generation (RAG)
 **Model:** Gemma 2B
 **Date:** October 17, 2025
-
----
 
 ## **1. Overview**
 

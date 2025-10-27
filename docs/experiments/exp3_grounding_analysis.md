@@ -1,12 +1,9 @@
----
-
 # **EEG RAG System – Experimental Development Report**
 
 **Date:** October 14, 2025
 **Model:** Gemma 2B
 **Experiments:** 9 iterations (exp0 – exp8)
 
----
 
 ## **1. Executive Summary**
 

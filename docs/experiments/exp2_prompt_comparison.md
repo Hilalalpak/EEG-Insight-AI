@@ -1,13 +1,9 @@
----
-
 # **EEG RAG System – Experimental Evaluation Report**
 
 **Date:** October 13, 2025
 **Model:** Gemma 2B
 **Versions Tested:** 4 (Main1 → Main4)
 **Test Set:** 5 standardized queries
-
----
 
 ## **1. Executive Summary**
 

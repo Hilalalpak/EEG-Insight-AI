@@ -1,11 +1,7 @@
----
-
 # **EEG RAG System – Technical Analysis Report (Phases 1–4)**
 
 **Project:** EEG Retrieval-Augmented Generation (RAG)
 **Date:** October 20, 2025
-
----
 
 ## **1. Executive Summary**
 

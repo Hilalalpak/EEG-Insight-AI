@@ -1,5 +1,3 @@
----
-
 # **EEG RAG Clinical Report**
 
 **Project:** Retrieval-Augmented Generation (RAG) for EEG Clinical Pattern Interpretation
@@ -7,7 +5,6 @@
 **Embedding Models:** all-MiniLM-L6-v2  |  SapBERT-PubMedBERT
 **Date:** October 12, 2025
 
----
 
 ## **1. Overview**
 

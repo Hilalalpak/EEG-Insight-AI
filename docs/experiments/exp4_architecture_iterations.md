@@ -1,5 +1,3 @@
----
-
 # **EEG RAG System – Comparative Evaluation of Six Experimental Architectures**
 
 **Project:** Retrieval-Augmented Generation (RAG) for EEG-Based Clinical Interpretation
@@ -7,7 +5,6 @@
 **Date:** October 16, 2025
 **Experiments:** exp1 → exp6 (21 standardized queries)
 
----
 
 ## **1. Executive Summary**
 
