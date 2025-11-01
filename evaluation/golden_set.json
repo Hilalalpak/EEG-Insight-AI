@@ -1,0 +1,137 @@
+[
+  {
+    "category": "Medical Terms",
+    "question": "What is LPD?",
+    "ideal_answer": "LPD (Lateralized Periodic Discharges), according to ACNS 2021 terminology, are periodic, lateralized (asymmetric, focal, or hemispheric) discharges. These discharges are classified as a 'Main Term,' and their primary distinguishing feature, unlike GPDs (Generalized Periodic Discharges), is that they occur on only one side (lateralized) of the brain. Clinically, LPDs indicate focal cortical irritability and are often associated with acute structural lesions or increased seizure risk."
+  },
+  {
+    "category": "Medical Terms",
+    "question": "Explain GPD and its clinical significance",
+    "ideal_answer": "GPD (Generalized Periodic Discharges) are generalized—meaning bilateral, symmetric, and synchronous—periodic discharges that occur in both hemispheres. Their main difference from LPDs (Lateralized) is this generalized distribution. Their clinical significance is high; GPDs suggest diffuse cortical dysfunction or encephalopathy, commonly seen in conditions like anoxic brain injury, toxic-metabolic encephalopathy, or status epilepticus."
+  },
+  {
+    "category": "Medical Terms",
+    "question": "What are BIRDs in EEG terminology?",
+    "ideal_answer": "BIRDs (Brief Intermittent Rhythmic Discharges) are a 'Main Term' introduced in ACNS 2021 terminology, defined as brief, intermittent, and rhythmic discharges. They are used to describe short, sporadic rhythmic discharges that are neither periodic (like LPD/GPD) nor continuous rhythmic (like LRDA/GRDA)."
+  },
+  {
+    "category": "Medical Terms",
+    "question": "Differentiate between LRDA and GRDA",
+    "ideal_answer": "The primary difference between LRDA and GRDA is their distribution. LRDA (Lateralized Rhythmic Delta Activity) is rhythmic delta activity that is focal or hemispheric (lateralized). In contrast, GRDA (Generalized Rhythmic Delta Activity) is a bilateral, symmetric, and synchronous (generalized) rhythmic delta activity. Both are 'rhythmic' (continuous activity without a clear 'break' or interval), but LRDA indicates focal dysfunction, whereas GRDA indicates diffuse cerebral dysfunction."
+  },
+  {
+    "category": "Medical Terms",
+    "question": "What is the Ictal-Interictal Continuum?",
+    "ideal_answer": "The Ictal-Interictal Continuum (IIC) describes EEG patterns that cannot be definitively classified as either normal interictal activity or clear ictal (seizure) activity. These patterns exist on a spectrum, and their clinical significance (i.e., whether they should be treated as seizure activity) often depends on the presence of 'Plus' modifiers (e.g., LPD+F, +R) and the patient's clinical state."
+  },
+  {
+    "category": "Reasoning & How-To",
+    "question": "How to detect LPD?",
+    "ideal_answer": "Detecting LPDs follows a step-by-step process: First, to determine if the pattern is 'periodic,' the interval between discharges is observed; for example, by counting seconds on the screen (one, two, three...) to check if discharges occur roughly once per second (1 Hz). Second, it is confirmed that the pattern is 'lateralized' (one-sided). Finally, one looks for 'Plus' modifiers defined by ACNS (e.g., LPD+F for fast activity riding on the discharges, or LPD+R for rhythmic activity), which can increase seizure risk."
+  },
+  {
+    "category": "Reasoning & How-To",
+    "question": "How to count frequency in EEG?",
+    "ideal_answer": "To count frequency in an EEG (measured in Hertz, Hz), a one-second time interval (segment) is observed on the screen. Then, the number of complete cycles of the dominant waveform (e.g., number of peaks) within that one-second window is counted. For example, if you count 6 complete cycles in one second, the frequency is 6 Hz."
+  },
+  {
+    "category": "Reasoning & How-To",
+    "question": "Why are breaks important in periodic discharges?",
+    "ideal_answer": "'Breaks' or inter-discharge intervals are critically important because their presence is the defining feature of a 'periodic' pattern. If there is a clear and consistent interval or 'break' between discharges, the pattern is periodic (e.g., LPD, GPD). If there are no clear breaks and the activity is continuous, the pattern is classified as 'rhythmic' (e.g., LRDA, GRDA). This distinction is fundamental to ACNS terminology."
+  },
+  {
+    "category": "Reasoning & How-To",
+    "question": "Explain the difference between periodic and rhythmic",
+    "ideal_answer": "The fundamental difference lies in the pattern's continuity. A 'periodic' pattern (like LPD or GPD) is defined by having clear 'breaks' or inter-discharge intervals between waveforms. A 'rhythmic' pattern (like LRDA or GRDA) is defined by the *absence* of breaks; it appears as continuous, successive cycles of activity."
+  },
+  {
+    "category": "Reasoning & How-To",
+    "question": "How to identify artifact in EEG?",
+    "ideal_answer": "Identifying artifact involves recognizing patterns that are non-cerebral (not from the brain). Common artifacts include high-frequency activity from muscle (EMG), which can be identified by its fast, spiky appearance. Signal analysis can also help; for instance, a segment with a very low signal-to-noise ratio (SNR) or a spectral edge frequency (SEF) above 25 Hz often indicates muscle artifact or noise rather than brain activity."
+  },
+  {
+    "category": "Patient Queries",
+    "question": "Tell me about patient 1002379034",
+    "ideal_answer": "Patient 1002379034's EEG data contains numerous segments classified as LPD (Lateralized Periodic Discharges). These segments often show high expert consensus (e.g., 92% agreement from 12 votes) and are described as clear, well-defined patterns. Signal analysis of these LPD segments typically reveals elevated amplitude (e.g., mean power ~28.5) and delta-dominant activity (e.g., SEF ~3.5 Hz), consistent with focal cortical irritability."
+  },
+  {
+    "category": "Patient Queries",
+    "question": "What patterns are in patient 1001717358?",
+    "ideal_answer": "Patient 1001717358's EEG data shows segments clearly classified as 'Seizure.' These segments exhibit high expert consensus (e.g., 100% agreement from 12 votes), indicating a definitive electrographic seizure. Signal analysis shows very high amplitude activity (e.g., mean power ~120-140) and fast-frequency dominant components (e.g., SEF ~28 Hz), characteristic of ictal (seizure) events."
+  },
+  {
+    "category": "Patient Queries",
+    "question": "Show seizure events for patient 1001717358",
+    "ideal_answer": "Seizure events for patient 1001717358 are present at multiple time points (e.g., seconds 397, 401, 402). These segments are classified as 'Seizure' with 100% expert consensus. They are characterized by very high amplitude activity, good signal quality, and fast-frequency components (SEF > 28 Hz), confirming they are high-confidence ictal events."
+  },
+  {
+    "category": "Patient Queries",
+    "question": "Find patient 42165 data",
+    "ideal_answer": "Data for patient 42165 (eeg_id 42165) includes segments classified as GPD (Generalized Periodic Discharges), for example, at second 516. These segments show high expert consensus (e.g., 100% agreement from 14 votes) and are characterized by elevated amplitude (mean power ~27.0) and delta-dominant (slow) activity (SEF ~2.9 Hz), consistent with diffuse cerebral dysfunction."
+  },
+  {
+    "category": "Patient Queries",
+    "question": "What is the confidence for patient 1002379034's LPD?",
+    "ideal_answer": "The confidence for LPD patterns in patient 1002379034 is generally 'high'. For example, the segment at second 520 is classified as LPD with 'high expert consensus' based on 92% agreement from 12 expert votes, indicating a clear, well-defined pattern rather than a mixed or uncertain one."
+  },
+  {
+    "category": "Patient Queries",
+    "question": "Tell me about patient 999999999",
+    "ideal_answer": "No data found for EEG/Patient 999999999. The query returned no relevant signal segments, medical documents, or transcripts after the search."
+  },
+  {
+    "category": "Pattern Analysis",
+    "question": "Show high-confidence seizure segments",
+    "ideal_answer": "High-confidence seizure segments are found, for example, in patient 1001717358 (e.g., at second 397). These segments are classified as 'Seizure' with 100% expert agreement. They are characterized by very high amplitude activity (mean power ~124), excellent signal quality (SNR ~10.4), and fast-frequency dominant components (SEF ~28.6 Hz)."
+  },
+  {
+    "category": "Pattern Analysis",
+    "question": "What are typical seizure signal characteristics?",
+    "ideal_answer": "Typical signal characteristics for a high-confidence seizure, based on the available data (e.g., patient 1001717358), include: 'very high amplitude activity' (e.g., mean power > 120), 'excellent signal quality' (e.g., SNR > 10), and 'fast frequency dominant activity' (e.g., SEF > 25 Hz). This reflects the high-frequency, high-amplitude, synchronized neuronal discharges of an ictal event."
+  },
+  {
+    "category": "Pattern Analysis",
+    "question": "Find segments with mixed expert opinions",
+    "ideal_answer": "Segments with 'mixed expert opinions' are those with low consensus confidence (e.g., < 60-70%). For example, patient 1002379034 at second 531 is classified as LPD, but with only 'mixed expert opinions' (64% agreement from 11 votes). The summary suggests this is an 'edge case or transitional pattern' and may exhibit characteristics of both LPD and an alternative interpretation."
+  },
+  {
+    "category": "Pattern Analysis",
+    "question": "What patterns have high amplitude and fast activity?",
+    "ideal_answer": "Patterns with both 'high amplitude' (mean power > 20) and 'fast activity' (SEF > 20 Hz) are characteristic of 'Seizure' events. For example, segments from patient 1001717358 (e.g., second 401) meet these criteria, showing mean power > 140 and SEF > 28 Hz. This combination is typical of ictal patterns, though it can also be seen in muscle artifact."
+  },
+  {
+    "category": "Pattern Analysis",
+    "question": "Show segments with clean signal quality",
+    "ideal_answer": "Segments with 'clean signal quality' (defined as SNR > 5) are found across multiple patients. For example, patient 1001717358 at second 397 (Seizure) has an SNR of 10.4 ('excellent signal quality'). Patient 1002379034 at second 520 (LPD) also has 'good signal quality' with an SNR of 8.1."
+  },
+  {
+    "category": "Comparisons",
+    "question": "Compare LPD vs GPD patterns",
+    "ideal_answer": "The primary difference is their distribution. LPD (Lateralized Periodic Discharges) are lateralized, meaning they are focal, asymmetric, or hemispheric (one-sided). They indicate focal cortical irritability. GPD (Generalized Periodic Discharges) are generalized, meaning they are bilateral, symmetric, and synchronous (both-sided). They suggest diffuse, widespread cerebral dysfunction (e.g., anoxic injury or encephalopathy)."
+  },
+  {
+    "category": "Comparisons",
+    "question": "Compare seizure in EEG 1001717358 vs 1002197945",
+    "ideal_answer": "Both patients show high-confidence 'Seizure' classifications. However, their signal characteristics differ slightly. Patient 1001717358 (e.g., sec 401) shows 'very high amplitude' (mean power ~141) and 'fast frequency' (SEF ~28 Hz) activity. Patient 1002197945 (e.g., sec 131) also shows 'very high amplitude' (mean power ~121) and 'fast frequency' (SEF ~26 Hz) activity. Both are 100% consensus seizures, but patient 1001717358 exhibits slightly higher power and frequency components in these examples."
+  },
+  {
+    "category": "Comparisons",
+    "question": "Difference between high and low confidence classifications?",
+    "ideal_answer": "High-confidence classifications (e.g., >85% agreement) indicate a clear, well-defined pattern with strong expert consensus (e.g., 'Seizure' for patient 1001717358 with 100% agreement). Low-confidence classifications (e.g., <65% agreement) indicate 'mixed expert opinions' or an 'edge case or transitional pattern.' These segments may have ambiguous features bridging two different patterns, making them clinically significant for understanding transitions."
+  },
+  {
+    "category": "Edge Cases",
+    "question": "Tell me about patient 999999999",
+    "ideal_answer": "No data found for EEG/Patient 999999999. The query returned no relevant signal segments, medical documents, or transcripts after the search."
+  },
+  {
+    "category": "Edge Cases",
+    "question": "What is XYZ pattern?",
+    "ideal_answer": "No relevant data found for 'XYZ pattern' after searching medical definitions, expert transcripts, and EEG signal data. This term does not appear to be part of the standard ACNS 2021 terminology or the provided expert video database."
+  },
+  {
+    "category": "Edge Cases",
+    "question": "Is LPD the same as low-power discharge?",
+    "ideal_answer": "No. LPD stands for 'Lateralized Periodic Discharges' and refers to the pattern's location (lateralized) and timing (periodic). It does not mean 'low-power.' In fact, LPD segments (e.g., patient 1002379034) often show 'elevated amplitude' or high power (e.g., mean power ~28.5), not low power."
+  }
+]
