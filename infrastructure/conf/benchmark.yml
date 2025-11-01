@@ -1,0 +1,43 @@
+api:
+  url: "http://localhost:8001/query"
+  name: "Local_RAG_API_v1"
+  timeout_sec: 120
+  input_key: "query"
+  output_key: "llm_response"
+  payload:
+    n_results: 5
+    n_videos: 2
+
+paths:
+  test_file: "evaluation/golden_set.json"
+  results_dir: "evaluation/benchmark_results"
+
+providers:
+  gemini:
+    model: "models/gemini-2.0-flash-001"
+    delay_sec: 25
+    evaluate_retry:
+      max_retries: 2
+      retry_sec: 30
+    params:
+      temperature: 0.0
+
+  cohere:
+    model: "command-a-03-2025"
+    delay_sec: 5
+    evaluate_retry:
+      max_retries: 0
+      retry_sec: 0
+    params:
+      temperature: 0.0
+
+  groq:
+    model: "llama-3.1-8b-instant"
+    client_config:
+      base_url: "https://api.groq.com/openai/v1"
+    delay_sec: 3
+    evaluate_retry:
+      max_retries: 2
+      retry_sec: 30
+    params:
+      temperature: 0.0

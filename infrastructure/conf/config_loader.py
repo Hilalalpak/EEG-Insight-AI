@@ -8,8 +8,11 @@ import sys
 from typing import Dict, Any, Type
 from pydantic import ValidationError
 
-from infrastructure.conf.interfaces import (DBConfigInterface, LLMConfigInterface, PipelineConfigInterface, RAGCoreConfigInterface,LoggingConfigInterface, MiscConfigInterface)
-from infrastructure.conf.pydantic_models import (DBConfigModel, LLMConfigModel, PipelineConfigModel, RAGCoreConfigModel,LoggingConfigModel, MiscConfigModel)
+from infrastructure.conf.interfaces import (DBConfigInterface, LLMConfigInterface, PipelineConfigInterface,
+                                            RAGCoreConfigInterface,LoggingConfigInterface, MiscConfigInterface,
+                                            BenchmarkConfigInterface)
+from infrastructure.conf.pydantic_models import (DBConfigModel, LLMConfigModel, PipelineConfigModel, RAGCoreConfigModel,
+                                                 LoggingConfigModel, MiscConfigModel, BenchmarkConfigModel)
 
 def _deep_merge(dict1: dict, dict2: dict) -> dict:
     """Recursively merges dict2 into dict1."""
@@ -80,3 +83,5 @@ class ConfigLoader:
         return self._load_model(LoggingConfigModel)
     def get_misc_config(self) -> MiscConfigInterface:
         return self._load_model(MiscConfigModel)
+    def get_benchmark_config(self) -> BenchmarkConfigModel:
+        return self._load_model(BenchmarkConfigModel)

@@ -1,6 +1,7 @@
 from pydantic import BaseModel, Field
 from typing import Dict, Any, List, Optional
-from .interfaces import (DBConfigInterface, LLMConfigInterface, PipelineConfigInterface,RAGCoreConfigInterface, LoggingConfigInterface, MiscConfigInterface)
+from .interfaces import (DBConfigInterface, LLMConfigInterface, PipelineConfigInterface,RAGCoreConfigInterface,
+                         LoggingConfigInterface, MiscConfigInterface)
 
 class DBConfigModel(BaseModel, DBConfigInterface):
     """DB and Storage settings."""
@@ -76,3 +77,18 @@ class MiscConfigModel(BaseModel, MiscConfigInterface):
     competition_name: Optional[str] = Field(None, alias="kaggle__competition_name")
 
     def get_kaggle_competition_name(self) -> Optional[str]: return self.competition_name
+class BenchmarkConfigModel(BaseModel):
+    api_url: str = Field(..., alias="api__url")
+    api_name: str = Field(..., alias="api__name")
+    api_timeout: int = Field(..., alias="api__timeout_sec")
+    api_input_key: str = Field(..., alias="api__input_key")
+    api_output_key: str = Field(..., alias="api__output_key")
+    api_payload: Dict[str, Any] = Field(..., alias="api__payload")
+    test_file: str = Field(..., alias="paths__test_file")
+    results_dir: str = Field(..., alias="paths__results_dir")
+    providers: Dict[str, Any] = Field(..., alias="providers")
+
+    def get_provider_config(self, provider_name: str) -> Dict[str, Any]:
+        if provider_name not in self.providers:
+            raise KeyError(f"Provider '{provider_name}' not found in config")
+        return self.providers[provider_name]
