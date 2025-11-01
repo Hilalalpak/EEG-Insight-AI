@@ -204,6 +204,19 @@ The resulting metadata includes over $30$ fields detailing the signal characteri
 
 -----
 
+## Framework Evaluation (In Development)
+
+A core part of this project is ensuring our RAG pipeline's responses are not just fast, but *accurate*. To move beyond manual testing, we are actively developing a modular benchmark framework (located in the `evaluation/` directory).
+This framework automates running a "golden set" of clinical questions against our API and evaluates the quality of the answers.
+
+### The "LLM-as-a-Judge" Approach
+
+Given the hardware constraints of our local **Gemma 2B** LLM, it wouldn't be fair for it to judge its own, more complex outputs. Therefore, our benchmark framework uses the "LLM-as-a-Judge" pattern, relying on powerful commercial APIs for evaluation.
+To ensure a fair and robust assessment (and to mitigate the bias of any single model), we designed the framework to be pluggable, allowing us to use several distinct, powerful foundation models as evaluators.
+This framework is currently focused on improving evaluation consistency, with future plans for full CI/CD integration to automatically test every code change.
+
+-----
+
 ## Known Limitations (Current Development Focus)
 
 1.  **Small Dataset:** We are currently using only $10$ EEG recordings. We plan to expand this by modifying `target_files` in `data_pipeline.py`.
@@ -211,6 +224,7 @@ The resulting metadata includes over $30$ fields detailing the signal characteri
 3.  **Context Window:** The LLM context is currently limited to about $\mathbf{800\,\text{chars}}$ per source, which may constrain reasoning.
 4.  **Performance:** The **Gemma 2B** model has limited reasoning capacity for complex cases. We are evaluating an upgrade to a larger LLM.
 5.  **Label Overlap:** Ambiguity can occur in low-confidence segments due to the multiple overlapping annotation windows.
+6.  **Benchmark Framework Refinement:** The `evaluation/` framework is still under active development. Current work is focused on enhancing the (model-generated) "golden set" answers, making the evaluation prompts metric-based, and evolving the current single-judge test run into a full multi-judge orchestration system.
 
 -----
 
