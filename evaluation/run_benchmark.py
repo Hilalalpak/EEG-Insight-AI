@@ -19,24 +19,28 @@ def main():
     loader = ConfigLoader(config_paths=config_paths)
     config = loader.get_benchmark_config()
 
-    provider = os.getenv("JUDGE_PROVIDER", "GEMINI").upper()
-    provider_config = config.get_provider_config(provider.lower())
-    judge = create_judge(provider, provider_config, logger)
-    delay = provider_config.get('delay_sec', 5)
+    provider_names = config.providers.keys()
+    judges = []
 
-    output_file = os.path.join(config.results_dir, f"{config.api_name}_{provider.lower()}_{datetime.now():%Y%Y%m%d_%H%M}.json")
+    logger.info(f"Providers: {list(provider_names)}")
+
+    for provider_name in provider_names:
+        provider_config = config.get_provider_config(provider_name)
+        judges.append(create_judge(provider_name.upper(), provider_config, logger))
+
+    output_file = os.path.join(config.results_dir, f"{config.api_name}_multi-judge_{datetime.now():%Y%m%d_%H%M}.json")
 
     cases = load_dataset(config.test_file, logger=logger)
+
     results = run_evaluation(
         test_cases=cases,
-        judge=judge,
+        judges=judges,
         api_config=config,
-        delay_sec=delay,
         logger=logger)
 
     if results:
         save_results(results, output_file, logger)
-        print_summary(results, config.api_name, judge.model_name, output_file, logger)
+        print_summary(results, config.api_name, "Multi-Judge (Parallel)", output_file, logger)
     else:
         logger.warning("No results")
 
