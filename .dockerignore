@@ -1,0 +1,99 @@
+# 1. SECURITY AND ENVIRONMENT FILES
+.env
+.env.*
+!.env.example
+secrets/
+*.key
+*.pem
+kaggle.json
+
+
+# 2. PYTHON VIRTUAL ENVS AND BUILD ARTIFACTS
+# Virtual Environment Folders
+.venv/
+venv/
+env/
+ENV/
+
+# Python Build Output and Caches
+__pycache__/
+*.py[co]
+*$py.class
+*.so
+.coverage
+
+# Testing Caches and Report
+.pytest_cache/
+htmlcov/
+
+# Packaging and Distribution
+dist/
+build/
+*.egg-info/
+*.egg
+.eggs/
+.tox/
+
+
+# 3. IDE (PYCHARM) AND OS (MAC) FILES
+# IDE Specific
+.vscode/
+.idea/
+
+# Editor Swap/Backup Files
+*.swp
+*.swo
+*.swn
+*~
+*.bak
+*.backup
+*.old
+
+# OS Files
+.DS_Store
+Thumbs.db
+
+# 4. DATA AND ML CACHES
+# A. Data Pipeline Outputs
+data/eeg/
+data/eeg_data/
+data/raw/
+data/chunks/
+data/processed/
+data/temp/
+temp/
+tmp/
+docs/
+*.parquet
+*.csv
+
+# B. ChromaDB (Vector DB) Data
+chroma_data/
+eegi-chroma-data/
+*.db
+*.sqlite
+*.sqlite3
+
+# C. MinIO Data (Docker Volumes)
+minio_data/
+eegi-minio-data/
+
+# D. HuggingFace / Model Caches
+.cache/
+*.bin
+*.safetensors
+*.h5
+*.pt
+*.pth
+pytorch_model.bin
+
+
+# 5. LOGS AND DOCS
+*.log
+logs/
+*.pid
+
+# Documentation
+*.docx
+*.txt
+!requirements*.txt

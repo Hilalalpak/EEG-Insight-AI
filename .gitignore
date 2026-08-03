@@ -1,24 +1,28 @@
+# ============================================================
 # 1. SENSITIVE DATA AND ENVIRONMENT SECRETS
+# ============================================================
 .env
-.env.*
 .secrets
 *.key
 *.pem
 
 
+# ============================================================
 # 2. PYTHON VIRTUAL ENVIRONMENTS AND BUILD ARTIFACTS
-# Virtual Environments (Venvs)
+# ============================================================
+
+# Virtual environments
 venv/
 env/
 .venv/
 
-# Python Build Output
+# Python compiled files
 __pycache__/
 *.pyc
 *.pyd
 *.so
 
-# Packaging, Distribution, and Test Caches
+# Packaging and test caches
 dist/
 build/
 *.whl
@@ -29,24 +33,76 @@ htmlcov/
 .cache/
 
 
-# 3. IDE (PYCHARM) AND OS (MACOS) FILES
-# PyCharm Configuration
+# ============================================================
+# 3. IDE AND OS FILES
+# ============================================================
+
+# PyCharm
 .idea/
 
-# macOS Metadata
+# macOS metadata
 .DS_Store
-*.swp # Editor swap files (Vim/Nano backups)
+*.swp
 
 
-# 4. RAG DATA PIPELINE OUTPUTS
-# A. Vector Database (ChromaDB) Persistence
+# ============================================================
+# 4. LARGE DATA FILES (never commit raw data to git)
+# ============================================================
+
+# Kaggle EEG data
+data/eeg/train.csv
+data/eeg/*.parquet
+data/**/*.parquet
+data/**/*.zip
+
+# Temporary download directory used by the data pipeline
+temp_kaggle_data/
+
+
+# ============================================================
+# 5. VECTOR DATABASE AND MODEL CACHE
+# ============================================================
+
+# ChromaDB local persistence
 .chroma/
 chroma_data/
 
-# B. MinIO Data Pipeline Temp Directories
-temp_kaggle_data/
+# Hugging Face model cache (downloaded at runtime)
+.cache/huggingface/
 
-# C. Downloaded Data (Kaggle)
-data/**/*.parquet
-data/**/*.zip
-self/data/ # Temporary or auxiliary data folders
+
+# ============================================================
+# 6. CHROMADB DUMP FILES (one-off debug exports, too large)
+# ============================================================
+dump_*.jsonl
+
+
+# ============================================================
+# 7. EVALUATION / BENCHMARK OUTPUTS
+# ============================================================
+
+# Auto-generated result files from benchmark runs
+evaluation/benchmark_results/*.json
+
+# Local quick-test result snapshots
+test_results*.json
+quick_test_results*.json
+test_results_metadata_aware*.json
+
+
+# ============================================================
+# 8. RESEARCH NOTES AND PERSONAL DOCUMENTS
+# ============================================================
+
+# Word docs in the notes folder are personal/exploratory, not code
+docs/reports/notes/*.docx
+
+# Anything that's just a scratch file from the notes directory
+docs/reports/notes/test*
+
+
+# ============================================================
+# 9. LOGS AND RUNTIME OUTPUTS
+# ============================================================
+*.log
+logs/
